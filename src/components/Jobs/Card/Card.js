@@ -36,7 +36,12 @@ function Card({ jobData }) {
       </div>
       <div className="grid-item grid-item-6">
         <p>Date Posted: {date}</p>
-        <a className="apply" href={jobData.redirect_url} target="blank" rel="noopener noreferrer">
+        <a
+          className="btn btn-charity-default apply"
+          href={jobData.redirect_url}
+          target="blank"
+          rel="noopener noreferrer"
+        >
           Apply
         </a>
       </div>

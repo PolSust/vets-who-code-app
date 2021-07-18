@@ -41,7 +41,7 @@ function Form({ data }) {
         </div>
       </div>
       <div className="col-md-2">
-        <button type="submit" className="btn btn-primary mb-2 submit-button search">
+        <button type="submit" className="btn btn-charity-default">
           <i className="glyphicon glyphicon-search">&nbsp;Search</i>
         </button>
       </div>

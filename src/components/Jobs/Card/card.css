@@ -11,10 +11,6 @@
   overflow: hidden;
 }
 
-.grid-item {
-  font-family: 'Open Sans', sans-serif;
-}
-
 .grid-container:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
@@ -61,12 +57,5 @@
 
 .apply {
   float: right;
-  background-color: var(--light-red);
-  padding: 1%;
-  border: 1px solid black;
-}
-
-.apply:hover {
-  background-color: var(--medium-blue);
-  padding: 1%;
+  width: 100px;
 }
