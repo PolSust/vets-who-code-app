@@ -4,25 +4,21 @@ import { StaticImage } from 'gatsby-plugin-image'
 import PropTypes from 'prop-types'
 import './pagination.css'
 
-function Paginate({ theme, jobData, formData, clickEvent, getGrid }) {
+function Paginate({ jobData, formData, clickEvent, getGrid }) {
   const pageChange = (event, value) => {
     formData(clickEvent, value)
     getGrid.current.container.current.scrollTop = 0
   }
 
   const useStyles = makeStyles({
-    root:
-      theme === 'light'
-        ? ''
-        : {
-            '& ul > li > button:not(.Mui-selected)': {
-              color: '#ffffff',
-            },
-            '& .MuiPaginationItem-ellipsis': { color: 'white' },
-            '& ul > li button:not(.Mui-selected):hover': {
-              backgroundColor: '#496288',
-            },
-          },
+    root: {
+      '& *': {
+        color: 'var(--element-3)',
+      },
+      '& ul > li button:not(.Mui-selected):hover': {
+        backgroundColor: 'var(--element-12)',
+      },
+    },
   })
 
   const classes = useStyles()
@@ -34,11 +30,11 @@ function Paginate({ theme, jobData, formData, clickEvent, getGrid }) {
           count={Math.floor(jobData.count / 15)}
           showFirstButton
           showLastButton
-          color={theme === 'light' ? 'primary' : 'secondary'}
+          color="primary"
           onChange={pageChange}
           className="inner-pagination"
         />
-        <div className={`adzuna ${theme === 'light' ? '' : 'dark-theme'}`}>
+        <div className="adzuna">
           Powered By{' '}
           <a href="https://www.adzuna.com/" target="_blank" rel="noopener noreferrer">
             Adzuna{' '}

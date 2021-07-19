@@ -17,7 +17,7 @@ function Form({ data }) {
           required
         />
       </div>
-      <div className="col-md-2" style={{ paddingTop: 7.5 }}>
+      <div className="col-md-2 remote-checkbox" style={{ paddingTop: 7.5 }}>
         <input className="form-check-input" type="checkbox" id="inlineFormCheck" />
         <label className="form-check-label" htmlFor="inlineFormCheck" style={{ marginLeft: 5 }}>
           Remote Only

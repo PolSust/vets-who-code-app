@@ -1,5 +1,5 @@
-.adzuna {
-  text-align: center;
+.pagination-wrapper {
+  margin-bottom: 20px;
 }
 
 .inner-pagination {
@@ -7,4 +7,15 @@
   justify-content: center;
   display: flex;
   width: 100%;
+}
+
+.adzuna {
+  text-align: center;
+  color: var(--element-4);
+}
+
+.adzuna a:hover {
+  color: var(--primary-1);
+  text-decoration: underline;
+  transition: all 0.3s;
 }
