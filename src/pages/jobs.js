@@ -9,6 +9,7 @@ import Paginate from '../components/Jobs/Pagination/Pagination'
 import ScrollContainer from 'react-indiana-drag-scroll'
 import PageHeader from '../components/PageHeader'
 import SEO from '../components/SEO'
+// import './../components/Jobs/jobs.css'
 
 function Jobs() {
   const [jobData, setJobData] = useState(false)
