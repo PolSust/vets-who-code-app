@@ -132,7 +132,7 @@ function Jobs() {
           </div>
           {/*  End Empty Grid  */}
 
-          {/*  Grid  */}
+          {/*  Card Grid  */}
           <div
             className={`jobgrid-container ${jobData ? 'scroll-container' : 'hidden'}`}
             ref={getGrid}
@@ -154,7 +154,7 @@ function Jobs() {
           />
         </div>
       </div>
-      {/*  End Grid  */}
+      {/*  End Card Grid  */}
     </>
   )
 }
