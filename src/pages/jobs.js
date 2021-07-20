@@ -4,7 +4,6 @@ import Form from '../components/Jobs/Form/Form'
 import Card from '../components/Jobs/Card/Card'
 import Loader from '../components/Jobs/Loader/Loader'
 import Video from '../components/Jobs/Video/Video'
-import NoResults from '../components/Jobs/NoResults/NoResults'
 import Paginate from '../components/Jobs/Pagination/Pagination'
 import PageHeader from '../components/PageHeader'
 import SEO from '../components/SEO'
@@ -98,6 +97,7 @@ function Jobs() {
           {/*  End Header  */}
 
           {/*  Search Bar  */}
+          <div id="middle" className="middle"></div>
           <div className="container">
             <div className="row">
               <div className="col-md-12">
@@ -108,10 +108,18 @@ function Jobs() {
           {/*  Search End  */}
 
           {/*  Empty Grid  */}
-          <div id="middle" className="middle"></div>
-          <NoResults isSubmitted={formSubmitted} jobData={jobData} />
+          <div className="no-results" style={{ marginTop: 75 }}>
+            <p
+              className={`text-center ${
+                formSubmitted && jobData && jobData.results.length === 0 ? '' : 'hidden'
+              }`}
+            >
+              Sorry there were no results. Try again.
+            </p>
+          </div>
           <Loader isSubmitted={formSubmitted} jobData={jobData} />
-          <div className="container" style={{ marginTop: 80 }}>
+
+          <div className="container">
             <div className="row">
               <div className="col-md-12">
                 <div className="col-md-3"></div>
