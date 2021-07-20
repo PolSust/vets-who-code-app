@@ -6,10 +6,8 @@ import Loader from '../components/Jobs/Loader/Loader'
 import Video from '../components/Jobs/Video/Video'
 import NoResults from '../components/Jobs/NoResults/NoResults'
 import Paginate from '../components/Jobs/Pagination/Pagination'
-import ScrollContainer from 'react-indiana-drag-scroll'
 import PageHeader from '../components/PageHeader'
 import SEO from '../components/SEO'
-// import './../components/Jobs/jobs.css'
 
 function Jobs() {
   const [jobData, setJobData] = useState(false)
@@ -127,17 +125,14 @@ function Jobs() {
           {/*  End Empty Grid  */}
 
           {/*  Grid  */}
-          <div className="jobgrid-container">
-            <ScrollContainer
-              ref={getGrid}
-              hideScrollbars={false}
-              className={`jobgrid hide-native-scrollbar ${jobData ? 'scroll-container' : 'hidden'}`}
-            >
-              {jobData &&
-                jobData.results.map((job, i) => (
-                  <Card isSubmitted={formSubmitted} jobData={job} key={`job data card-${i}`} />
-                ))}
-            </ScrollContainer>
+          <div
+            className={`jobgrid-container ${jobData ? 'scroll-container' : 'hidden'}`}
+            ref={getGrid}
+          >
+            {jobData &&
+              jobData.results.map((job, i) => (
+                <Card isSubmitted={formSubmitted} jobData={job} key={`job data card-${i}`} />
+              ))}
           </div>
         </div>
       </section>
