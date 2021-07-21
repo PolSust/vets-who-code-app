@@ -117,6 +117,7 @@ function Jobs() {
               Sorry there were no results. Try again.
             </p>
           </div>
+
           <Loader isSubmitted={formSubmitted} jobData={jobData} />
 
           <div className="container">
