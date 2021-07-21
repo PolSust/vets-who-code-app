@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 
 function Form({ data }) {
   return (
-    <form onSubmit={event => data(event)} className="form-inline text-center job-grabber">
+    <form onSubmit={event => data(event)} className="form-inline text-center">
       <div className="col-md-2"></div>
       <div className="col-md-2">
         <label className="sr-only" htmlFor="zipCode">

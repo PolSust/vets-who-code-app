@@ -133,10 +133,7 @@ function Jobs() {
           {/*  End Empty Grid  */}
 
           {/*  Card Grid  */}
-          <div
-            className={`jobgrid-container ${jobData ? 'scroll-container' : 'hidden'}`}
-            ref={getGrid}
-          >
+          <div className="jobgrid-container" ref={getGrid}>
             {jobData &&
               jobData.results.map((job, i) => (
                 <Card isSubmitted={formSubmitted} jobData={job} key={`job data card-${i}`} />
