@@ -1,5 +1,4 @@
 import { useState, useRef } from 'react'
-import Typed from 'react-typed'
 import Form from '../components/Jobs/Form/Form'
 import Card from '../components/Jobs/Card/Card'
 import Loader from '../components/Jobs/Loader/Loader'
@@ -50,58 +49,37 @@ function Jobs() {
         <div className="container">
           <div className="row">
             <div className="col-md-12 lead-in">
-              <h1 id="main-header" className="story-title">
-                JOB SEARCH
-              </h1>
+              <h1 className="story-title">JOB SEARCH</h1>
               <p>
                 <i>
-                  {' '}
-                  <div className="typed-container">
-                    <div id="typed-strings">
-                      <p className="pt-0">
-                        #VetsWhoCode{' '}
-                        <span id="typed" className="typed">
-                          {' '}
-                          <Typed
-                            strings={[
-                              'provides job placement assistance.',
-                              '^2000 makes a difference in the lives of veterans.',
-                            ]}
-                            typeSpeed={50}
-                            backSpeed={50}
-                            loop
-                            startDelay={1000}
-                            backDelay={3000}
-                          />
-                        </span>
-                      </p>
-                    </div>
-                  </div>
+                  <p className="pt-0">
+                    #VetsWhoCode provides job placement assistance to veterans and spouses.
+                  </p>
                 </i>
               </p>
             </div>
-          </div>
-          <div className="col-md-12">
-            <div className="row">
-              <div className="faq-short-brief container-fluid">
-                <p>
-                  Vets Who Code Job Search (VWC) is a tool for connecting veterans, military, and
-                  military spouses with jobs. Our goal is to make every workplace fair and
-                  profitable by bringing together the perfect candidate with the ideal employer. Our
-                  site pairs technology and best practices in order to promote practical and gainful
-                  employment.
-                </p>
-              </div>
-            </div>
-          </div>
-          {/*  End Header  */}
-
-          {/*  Search Bar  */}
-          <div id="middle" className="middle"></div>
-          <div className="container">
             <div className="row">
               <div className="col-md-12">
-                <Form data={formData} />
+                <div className="faq-short-brief container-fluid">
+                  <p>
+                    Vets Who Code Job Search (VWC) is a tool for connecting veterans, military, and
+                    military spouses with jobs. Our goal is to make every workplace fair and
+                    profitable by bringing together the perfect candidate with the ideal employer.
+                    Our site pairs technology and best practices in order to promote practical and
+                    gainful employment.
+                  </p>
+                </div>
+              </div>
+            </div>
+            {/*  End Header  */}
+
+            {/*  Search Bar  */}
+            <div id="middle" className="middle"></div>
+            <div className="container search">
+              <div className="row">
+                <div className="col-md-12">
+                  <Form data={formData} />
+                </div>
               </div>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import './form.css'
 
 function Form({ data }) {
   return (
@@ -23,8 +24,8 @@ function Form({ data }) {
           Remote Only
         </label>
       </div>
-      <div className="col-md-2">
-        <div className="form-group" id="sel1">
+      <div className="col-md-2 distance-container">
+        <div className="form-group distance" id="sel1">
           <label htmlFor="sel1"></label>
           <select className="form-control input-md" id="sel1" name="sellist1" defaultValue="40">
             {/* <!-- value is set in km --> */}
@@ -40,7 +41,7 @@ function Form({ data }) {
           </select>
         </div>
       </div>
-      <div className="col-md-2">
+      <div className="col-md-2 search-button">
         <button type="submit" className="btn btn-charity-default">
           <i className="glyphicon glyphicon-search">&nbsp;Search</i>
         </button>

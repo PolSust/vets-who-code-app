@@ -1,3 +1,27 @@
+label {
+  margin-bottom: 0;
+}
+
+@media (max-width: 991px) {
+  .remote-checkbox {
+    margin-top: 10px;
+    padding-top: 7.5px;
+  }
+  .distance-container {
+    margin-top: 10px;
+    padding-top: 7.5px;
+  }
+
+  .distance-container .distance {
+    display: block;
+  }
+
+  .search-button {
+    margin-top: 10px;
+    padding-top: 7.5px;
+  }
+}
+
 @media (max-width: 768px) {
   .remote-checkbox {
     margin-top: 20px;
