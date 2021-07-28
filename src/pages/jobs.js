@@ -9,20 +9,21 @@ import SEO from '../components/SEO'
 
 function Jobs() {
   const [jobData, setJobData] = useState(false)
-  const [clickEvent, setClickEvent] = useState(false)
+  const [formSubmitEvent, setFormSubmitEvent] = useState(false)
   const [formSubmitted, setFormSubmitted] = useState(false)
+  const [pageContext, setPageContext] = useState(false)
   const getGrid = useRef(null)
 
-  function formData(event, page = 1) {
-    event.preventDefault()
-    setClickEvent(event)
+  function formData(formSubmitEvent, page = 1) {
+    formSubmitEvent.preventDefault()
+    setFormSubmitEvent(formSubmitEvent)
     setFormSubmitted(true)
     document.getElementById('middle').scrollIntoView()
 
     const formResponse = {
-      zipCode: event.target[0].value,
-      remote: event.target[1].checked,
-      distance: event.target[2].value,
+      zipCode: formSubmitEvent.target[0].value,
+      remote: formSubmitEvent.target[1].checked,
+      distance: formSubmitEvent.target[2].value,
     }
 
     let what = 'javascript react gatsby graphql node jquery bootstrap'
@@ -36,9 +37,17 @@ function Jobs() {
 
     fetch(url)
       .then(response => response.json())
-      .then(setJobData)
-      .catch(console.error)
+      .then(data => {
+        setJobData(data)
+        setPageContext({
+          currentPage: page,
+          isFirstPage: page === 1 ? true : false,
+          isLastPage: page === Math.floor(data.count / 15) ? true : false,
+          totalPages: Math.floor(data.count / 15),
+        })
+      })
       .then(setJobData(false))
+      .catch(console.error)
   }
 
   return (
@@ -122,12 +131,15 @@ function Jobs() {
       </section>
       <div className="container">
         <div className="row">
-          <Paginate
-            jobData={jobData}
-            formData={formData}
-            clickEvent={clickEvent}
-            getGrid={getGrid}
-          />
+          {pageContext && (
+            <Paginate
+              jobData={jobData}
+              formData={formData}
+              formSubmitEvent={formSubmitEvent}
+              getGrid={getGrid}
+              pageContext={pageContext}
+            />
+          )}
         </div>
       </div>
       {/*  End Card Grid  */}
