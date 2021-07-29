@@ -85,36 +85,26 @@ function Jobs() {
             {/*  Search Bar  */}
             <div id="middle" className="middle"></div>
             <div className="container search">
-              <div className="row">
-                <div className="col-md-12">
-                  <Form data={formData} />
-                </div>
+              <div className="col-md-12">
+                <Form data={formData} />
               </div>
             </div>
-          </div>
-          {/*  Search End  */}
+            {/*  Search End  */}
 
-          {/*  Empty Grid  */}
-          <div className="no-results" style={{ marginTop: 75 }}>
-            <p
-              className={`text-center ${
-                formSubmitted && jobData && jobData.results.length === 0 ? '' : 'hidden'
-              }`}
-            >
-              Sorry there were no results. Try again.
-            </p>
-          </div>
-
-          <Loader isSubmitted={formSubmitted} jobData={jobData} />
-
-          <div className="container">
-            <div className="row">
+            {/*  Empty Grid  */}
+            <div className="no-results" style={{ marginTop: 75 }}>
+              <p
+                className={`text-center ${
+                  formSubmitted && jobData && jobData.results.length === 0 ? '' : 'hidden'
+                }`}
+              >
+                Sorry there were no results. Try again.
+              </p>
+            </div>
+            <Loader isSubmitted={formSubmitted} jobData={jobData} />
+            <div className="container">
               <div className="col-md-12">
-                <div className="col-md-3"></div>
-                <div className="col-md-6">
-                  <Video isSubmitted={formSubmitted} />
-                </div>
-                <div className="col-md-3"></div>
+                <Video isSubmitted={formSubmitted} />
               </div>
             </div>
           </div>
