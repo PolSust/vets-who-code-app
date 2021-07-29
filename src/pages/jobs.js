@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import Form from '../components/Jobs/Form/Form'
 import Card from '../components/Jobs/Card/Card'
 import Loader from '../components/Jobs/Loader/Loader'
@@ -12,13 +12,12 @@ function Jobs() {
   const [formSubmitEvent, setFormSubmitEvent] = useState(false)
   const [formSubmitted, setFormSubmitted] = useState(false)
   const [pageContext, setPageContext] = useState(false)
-  const getGrid = useRef(null)
 
   function formData(formSubmitEvent, page = 1) {
     formSubmitEvent.preventDefault()
     setFormSubmitEvent(formSubmitEvent)
     setFormSubmitted(true)
-    document.getElementById('middle').scrollIntoView()
+    document.getElementById('scroll-to').scrollIntoView()
 
     const formResponse = {
       zipCode: formSubmitEvent.target[0].value,
@@ -41,8 +40,11 @@ function Jobs() {
         setJobData(data)
         setPageContext({
           currentPage: page,
-          isFirstPage: page === 1 ? true : false,
-          isLastPage: page === Math.floor(data.count / 15) ? true : false,
+          minPage: Math.floor(page / 10) * 10,
+          maxPage:
+            Math.ceil(page / 10) * 10 > Math.floor(data.count / 15)
+              ? Math.floor(data.count / 15)
+              : Math.ceil(page / 10) * 10 - 1,
           totalPages: Math.floor(data.count / 15),
         })
       })
@@ -54,7 +56,9 @@ function Jobs() {
     <>
       <SEO title="Job Search" />
       <PageHeader />
-      <section id="jobs" className="small-top-pad section bg-default">
+
+      {/* Section Header */}
+      <section id="jobs" className="small-top-pad section bg-default" style={{ paddingBottom: 35 }}>
         <div className="container">
           <div className="row">
             <div className="col-md-12 lead-in">
@@ -83,7 +87,7 @@ function Jobs() {
             {/*  End Header  */}
 
             {/*  Search Bar  */}
-            <div id="middle" className="middle"></div>
+            <div id="scroll-to" style={{ position: 'relative', top: -150 }}></div>
             <div className="container search">
               <div className="col-md-12">
                 <Form data={formData} />
@@ -91,7 +95,7 @@ function Jobs() {
             </div>
             {/*  Search End  */}
 
-            {/*  Empty Grid  */}
+            {/*  No Results  */}
             <div className="no-results" style={{ marginTop: 75 }}>
               <p
                 className={`text-center ${
@@ -101,17 +105,23 @@ function Jobs() {
                 Sorry there were no results. Try again.
               </p>
             </div>
+            {/* End No Results */}
+
+            {/* Loader */}
             <Loader isSubmitted={formSubmitted} jobData={jobData} />
+            {/* End Loader */}
+
+            {/* Video */}
             <div className="container">
               <div className="col-md-12">
                 <Video isSubmitted={formSubmitted} />
               </div>
             </div>
           </div>
-          {/*  End Empty Grid  */}
+          {/*  End Video  */}
 
-          {/*  Card Grid  */}
-          <div className="jobgrid-container" ref={getGrid}>
+          {/*  Cards */}
+          <div className="jobgrid-container">
             {jobData &&
               jobData.results.map((job, i) => (
                 <Card isSubmitted={formSubmitted} jobData={job} key={`job data card-${i}`} />
@@ -119,6 +129,9 @@ function Jobs() {
           </div>
         </div>
       </section>
+      {/* End Cards */}
+
+      {/* Pagination */}
       <div className="container">
         <div className="row">
           {pageContext && (
@@ -126,13 +139,13 @@ function Jobs() {
               jobData={jobData}
               formData={formData}
               formSubmitEvent={formSubmitEvent}
-              getGrid={getGrid}
               pageContext={pageContext}
+              setPageContext={setPageContext}
             />
           )}
         </div>
       </div>
-      {/*  End Card Grid  */}
+      {/* End Pagination */}
     </>
   )
 }
