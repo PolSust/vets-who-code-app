@@ -6,7 +6,6 @@ import Video from '../components/Jobs/Video/Video'
 import Paginate from '../components/Jobs/Pagination/Pagination'
 import PageHeader from '../components/PageHeader'
 import SEO from '../components/SEO'
-import '../components/Jobs/Form/form.css'
 
 function Jobs() {
   const [jobData, setJobData] = useState(false)
@@ -18,7 +17,7 @@ function Jobs() {
     formSubmitEvent.preventDefault()
     setFormSubmitEvent(formSubmitEvent)
     setFormSubmitted(true)
-    document.getElementById('scroll-to').scrollIntoView()
+    document.getElementById('scroll-to').scrollIntoView({ behavior: 'smooth', block: 'start' })
 
     const formResponse = {
       zipCode: formSubmitEvent.target[0].value,
@@ -88,7 +87,7 @@ function Jobs() {
             {/*  End Header  */}
 
             {/*  Search Bar  */}
-            <div id="scroll-to" className="scroll-to"></div>
+            <div id="scroll-to" className="scroll-to" name="scroll-to"></div>
             <div
               className="search"
               style={{
