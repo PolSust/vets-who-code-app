@@ -87,7 +87,7 @@ function Jobs() {
             {/*  End Header  */}
 
             {/*  Search Bar  */}
-            <div id="scroll-to" style={{ position: 'relative', top: -150 }}></div>
+            <div id="scroll-to" style={{ position: 'relative', top: -130 }}></div>
             <div
               className="search"
               style={{
