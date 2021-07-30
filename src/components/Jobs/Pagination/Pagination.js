@@ -5,9 +5,12 @@ import './pagination.css'
 function Paginate({ pageContext, formData, formSubmitEvent, setPageContext }) {
   let { currentPage, totalPages, maxPage, minPage } = pageContext
   const pageChange = value => {
-    setPageContext(null)
-    if (value !== currentPage) formData(formSubmitEvent, value)
+    if (value !== currentPage) {
+      setPageContext(null)
+      formData(formSubmitEvent, value)
+    }
   }
+
   const direction = value => {
     let count = value.target.innerText === 'Next' ? 10 : -10
 
@@ -45,12 +48,18 @@ function Paginate({ pageContext, formData, formSubmitEvent, setPageContext }) {
               </li>
             )}
             {Array.from({ length: maxPage - minPage }, (_, index) => (
-              // <li key={index +  currentPage} style={(index > maxPage || index < minPage) ? {display: 'none'}:{}} >
               <li
                 key={index + 1 + minPage}
                 style={index + 1 + minPage > totalPages ? { display: 'none' } : {}}
               >
-                <span onClick={() => pageChange(index + 1 + minPage)} style={{ cursor: 'pointer' }}>
+                <span
+                  onClick={() => pageChange(index + 1 + minPage)}
+                  style={
+                    index + 1 + minPage === currentPage
+                      ? { background: '#eee' }
+                      : { cursor: 'pointer' }
+                  }
+                >
                   {index + 1 + minPage}
                 </span>
               </li>
