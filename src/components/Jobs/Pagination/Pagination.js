@@ -42,7 +42,7 @@ function Paginate({ pageContext, formData, formSubmitEvent, setPageContext }) {
             {minPage > 9 && (
               <li>
                 {/* <span aria-hidden="true">&laquo;</span> */}
-                <span aria-hidden="true" onClick={direction} style={{ cursor: 'pointer' }}>
+                <span aria-hidden="true" onClick={direction} style={{ cursor: 'pointer' }} tabindex="0">
                   Previous
                 </span>
               </li>
@@ -53,21 +53,23 @@ function Paginate({ pageContext, formData, formSubmitEvent, setPageContext }) {
                 style={index + 1 + minPage > totalPages ? { display: 'none' } : {}}
               >
                 <span
+                  tabindex="0"
                   onClick={() => pageChange(index + 1 + minPage)}
                   style={
                     index + 1 + minPage === currentPage
                       ? { background: '#eee' }
                       : { cursor: 'pointer' }
                   }
+                  tabindex="0"
                 >
                   {index + 1 + minPage}
                 </span>
               </li>
             ))}
-            {maxPage <= pageContext.totalPages && (
+            {maxPage <= pageContext.totalPages && pageContext.totalPages > 9  && (
               <li>
                 {/* <span aria-hidden="true">&raquo;</span> */}
-                <span aria-hidden="true" onClick={direction} style={{ cursor: 'pointer' }}>
+                <span aria-hidden="true" onClick={direction} style={{ cursor: 'pointer' }} tabindex="0">
                   More
                 </span>
               </li>
