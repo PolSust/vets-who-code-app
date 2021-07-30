@@ -1,29 +1,38 @@
+form {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 label {
   margin-bottom: 0;
 }
 
 @media (max-width: 991px) {
-  .remote-checkbox {
-    margin-top: 10px;
-    padding-top: 7.5px;
-  }
-  .distance-container {
-    margin-top: 10px;
-    padding-top: 7.5px;
+  form {
+    flex-direction: column;
   }
 
-  .distance-container .distance {
-    display: block;
+  .zipcode-container {
+    width: 100%;
+  }
+
+  .remote-container {
+    margin-top: 20px;
+    width: 100%;
+  }
+  .distance-container {
+    margin-top: 20px;
+    width: 100%;
   }
 
   .search-button {
-    margin-top: 10px;
-    padding-top: 7.5px;
+    margin-top: 20px;
   }
 }
 
 @media (max-width: 768px) {
-  .remote-checkbox {
-    margin-top: 20px;
+  .remote-container {
+    padding-top: 20px;
   }
 }
