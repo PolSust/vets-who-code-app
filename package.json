@@ -32,6 +32,7 @@
     "react-hook-form": "6.15.5",
     "react-icons": "4.2.0",
     "react-modal": "3.13.1",
+    "react-scroll": "^1.8.3",
     "react-slick": "0.28.1",
     "react-toastify": "7.0.4",
     "react-typed": "^1.2.0",

@@ -12,13 +12,13 @@ function Paginate({ pageContext, formData, formSubmitEvent, setPageContext }) {
   }
 
   const direction = value => {
-    let count = value.target.innerText === 'Next' ? 10 : -10
+    let count = value.target.innerText === 'More' ? 10 : -10
 
     setPageContext({
       currentPage: currentPage,
       minPage: minPage + count,
       maxPage:
-        count === 'Next'
+        count === 'More'
           ? maxPage + 10 > totalPages
             ? totalPages
             : maxPage + 10
@@ -68,7 +68,7 @@ function Paginate({ pageContext, formData, formSubmitEvent, setPageContext }) {
               <li>
                 {/* <span aria-hidden="true">&raquo;</span> */}
                 <span aria-hidden="true" onClick={direction} style={{ cursor: 'pointer' }}>
-                  Next
+                  More
                 </span>
               </li>
             )}

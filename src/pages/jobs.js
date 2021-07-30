@@ -6,6 +6,7 @@ import Video from '../components/Jobs/Video/Video'
 import Paginate from '../components/Jobs/Pagination/Pagination'
 import PageHeader from '../components/PageHeader'
 import SEO from '../components/SEO'
+import { Link, animateScroll as scroll } from 'react-scroll'
 
 function Jobs() {
   const [jobData, setJobData] = useState(false)
