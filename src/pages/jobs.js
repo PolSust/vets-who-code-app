@@ -88,8 +88,22 @@ function Jobs() {
 
             {/*  Search Bar  */}
             <div id="scroll-to" style={{ position: 'relative', top: -150 }}></div>
-            <div className="container search">
-              <div className="col-md-12">
+            <div
+              className="search"
+              style={{
+                background: 'var(--surface-2)',
+                paddingTop: 20,
+                paddingBottom: 20,
+                borderRadius: 10,
+                boxShadow: '0 0 8px 0 var(--element-12)',
+                marginRight: 15,
+                marginLeft: 15,
+                paddingLeft: 20,
+                paddingRight: 20,
+                border: '1px solid var(--element-12)',
+              }}
+            >
+              <div>
                 <Form data={formData} />
               </div>
             </div>
