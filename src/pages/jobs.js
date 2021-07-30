@@ -6,7 +6,7 @@ import Video from '../components/Jobs/Video/Video'
 import Paginate from '../components/Jobs/Pagination/Pagination'
 import PageHeader from '../components/PageHeader'
 import SEO from '../components/SEO'
-import { Link, animateScroll as scroll } from 'react-scroll'
+import '../components/Jobs/Form/form.css'
 
 function Jobs() {
   const [jobData, setJobData] = useState(false)
@@ -88,7 +88,7 @@ function Jobs() {
             {/*  End Header  */}
 
             {/*  Search Bar  */}
-            <div id="scroll-to" style={{ position: 'relative', top: -130 }}></div>
+            <div id="scroll-to" className="scroll-to"></div>
             <div
               className="search"
               style={{

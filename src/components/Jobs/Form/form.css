@@ -8,6 +8,17 @@ label {
   margin-bottom: 0;
 }
 
+.scroll-to {
+  position: relative;
+  top: -130px;
+}
+
+@media (max-width: 1400px) {
+  .scroll-to {
+    top: -210px;
+  }
+}
+
 @media (max-width: 991px) {
   form {
     flex-direction: column;
@@ -34,5 +45,8 @@ label {
 @media (max-width: 768px) {
   .remote-container {
     padding-top: 20px;
+  }
+  .scroll-to {
+    top: -100px;
   }
 }
