@@ -4,6 +4,7 @@ import './pagination.css'
 
 function Pagination({ pageContext, formData, formSubmitEvent, setPageContext }) {
   let { currentPage, totalPages, maxPage, minPage } = pageContext
+
   const pageChange = value => {
     if (value !== currentPage) {
       setPageContext(null)
@@ -110,6 +111,6 @@ Pagination.propTypes = {
   pageContext: PropTypes.object,
   setPageContext: PropTypes.object,
   jobData: PropTypes.object,
-  formData: PropTypes.object,
+  formData: PropTypes.func,
   formSubmitEvent: PropTypes.object,
 }

@@ -52,5 +52,5 @@ function Card({ jobData }) {
 export default Card
 
 Card.propTypes = {
-  jobData: PropTypes.bool,
+  jobData: PropTypes.object,
 }

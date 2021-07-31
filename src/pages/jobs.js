@@ -56,11 +56,11 @@ function Jobs() {
           <div className="row">
             <div className="col-md-12 lead-in">
               <h1 className="story-title">JOB SEARCH</h1>
-                <i>
-                  <p className="pt-0">
-                    #VetsWhoCode provides job placement assistance to veterans and spouses.
-                  </p>
-                </i>
+              <i>
+                <p className="pt-0">
+                  #VetsWhoCode provides job placement assistance to veterans and spouses.
+                </p>
+              </i>
             </div>
             <div className="row">
               <div className="col-md-12">
@@ -78,7 +78,7 @@ function Jobs() {
             {/*  End Header  */}
 
             {/*  Search Bar  */}
-            <div id="scroll-to" className="scroll-to" name="scroll-to"></div>
+            <div id="scroll-to" className="scroll-to"></div>
             <div className="search">
               <div>
                 <Form formData={formData} />
