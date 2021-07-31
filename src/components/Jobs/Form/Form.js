@@ -1,12 +1,14 @@
 import PropTypes from 'prop-types'
-import { useForm } from "react-hook-form";
+import { useForm } from 'react-hook-form'
 import './form.css'
 
 function Form({ formData }) {
-  const { register, handleSubmit } = useForm();
-  
+  const { register, handleSubmit } = useForm()
   return (
-    <form onSubmit={handleSubmit((submit)=>formData(submit,1))} className="form-inline text-center">
+    <form
+      onSubmit={handleSubmit(submit => formData(submit, 1))}
+      className="form-inline text-center"
+    >
       <div className="zipcode-container">
         <label className="sr-only" htmlFor="zipCode">
           Zip Code
@@ -23,15 +25,27 @@ function Form({ formData }) {
         />
       </div>
       <div className="remote-container">
-        <input className="form-check-input" type="checkbox" id="inlineFormCheck" name="remote" ref={register} />
+        <input
+          className="form-check-input"
+          type="checkbox"
+          id="inlineFormCheck"
+          name="remote"
+          ref={register}
+        />
         <label className="form-check-label" htmlFor="inlineFormCheck" style={{ marginLeft: 5 }}>
           Remote Only
         </label>
       </div>
 
-      <div className="form-group distance-container" id="sel1">
-        <label htmlFor="sel1"></label>
-        <select className="form-control input-md" id="sel1" name="sellist1" defaultValue="40" name="distance" ref={register}>
+      <div className="form-group distance-container">
+        <label htmlFor="distanceSelect"></label>
+        <select
+          className="form-control input-md"
+          id="distanceSelect"
+          defaultValue="40"
+          name="distance"
+          ref={register}
+        >
           {/* <!-- value is set in km --> */}
           <option value="1">Only in</option>
           <option value="8">5 mi.</option>
@@ -57,5 +71,5 @@ function Form({ formData }) {
 export default Form
 
 Form.propTypes = {
-  data: PropTypes.object,
+  formData: PropTypes.object,
 }
