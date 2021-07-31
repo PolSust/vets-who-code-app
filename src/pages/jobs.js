@@ -88,21 +88,7 @@ function Jobs() {
 
             {/*  Search Bar  */}
             <div id="scroll-to" className="scroll-to" name="scroll-to"></div>
-            <div
-              className="search"
-              style={{
-                background: 'var(--surface-2)',
-                paddingTop: 20,
-                paddingBottom: 20,
-                borderRadius: 10,
-                boxShadow: '0 0 8px 0 var(--element-12)',
-                marginRight: 15,
-                marginLeft: 15,
-                paddingLeft: 20,
-                paddingRight: 20,
-                border: '1px solid var(--element-12)',
-              }}
-            >
+            <div className="search">
               <div>
                 <Form data={formData} />
               </div>

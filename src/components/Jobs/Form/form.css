@@ -8,6 +8,16 @@ label {
   margin-bottom: 0;
 }
 
+.search {
+  background: var(--surface-2);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px 0 var(--element-12);
+  margin-right: 15px;
+  margin-left: 15px;
+  border: 1px solid var(--element-12);
+}
+
 .scroll-to {
   position: relative;
   top: -130px;
