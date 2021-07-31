@@ -3,7 +3,7 @@ import Form from '../components/Jobs/Form/Form'
 import Card from '../components/Jobs/Card/Card'
 import Loader from '../components/Jobs/Loader/Loader'
 import Video from '../components/Jobs/Video/Video'
-import Paginate from '../components/Jobs/Pagination/Pagination'
+import Pagination from '../components/Jobs/Pagination/Pagination'
 import PageHeader from '../components/PageHeader'
 import SEO from '../components/SEO'
 
@@ -135,7 +135,7 @@ function Jobs() {
       <div className="container">
         <div className="row">
           {pageContext && (
-            <Paginate
+            <Pagination
               jobData={jobData}
               formData={formData}
               formSubmitEvent={formSubmitEvent}

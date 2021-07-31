@@ -2,7 +2,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import PropTypes from 'prop-types'
 import './pagination.css'
 
-function Paginate({ pageContext, formData, formSubmitEvent, setPageContext }) {
+function Pagination({ pageContext, formData, formSubmitEvent, setPageContext }) {
   let { currentPage, totalPages, maxPage, minPage } = pageContext
   const pageChange = value => {
     if (value !== currentPage) {
@@ -109,9 +109,9 @@ function Paginate({ pageContext, formData, formSubmitEvent, setPageContext }) {
   )
 }
 
-export default Paginate
+export default Pagination
 
-Paginate.propTypes = {
+Pagination.propTypes = {
   currentPage: PropTypes.number,
   isFirstPage: PropTypes.bool,
   isLastPage: PropTypes.bool,
