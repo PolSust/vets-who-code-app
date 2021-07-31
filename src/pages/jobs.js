@@ -13,17 +13,10 @@ function Jobs() {
   const [formSubmitted, setFormSubmitted] = useState(false)
   const [pageContext, setPageContext] = useState(false)
 
-  function formData(formSubmitEvent, page = 1) {
-    formSubmitEvent.preventDefault()
-    setFormSubmitEvent(formSubmitEvent)
+  function formData(formResponse, page = 1) {
+    setFormSubmitEvent(formResponse)
     setFormSubmitted(true)
     document.getElementById('scroll-to').scrollIntoView({ behavior: 'smooth', block: 'start' })
-
-    const formResponse = {
-      zipCode: formSubmitEvent.target[0].value,
-      remote: formSubmitEvent.target[1].checked,
-      distance: formSubmitEvent.target[2].value,
-    }
 
     let what = 'javascript react gatsby graphql node jquery bootstrap'
     let exclude = '0000 senior sr principal lead master'
@@ -90,7 +83,7 @@ function Jobs() {
             <div id="scroll-to" className="scroll-to" name="scroll-to"></div>
             <div className="search">
               <div>
-                <Form data={formData} />
+                <Form formData={formData} />
               </div>
             </div>
             {/*  Search End  */}
