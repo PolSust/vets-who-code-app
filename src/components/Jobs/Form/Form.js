@@ -71,5 +71,5 @@ function Form({ formData }) {
 export default Form
 
 Form.propTypes = {
-  formData: PropTypes.object,
+  formData: PropTypes.func,
 }
