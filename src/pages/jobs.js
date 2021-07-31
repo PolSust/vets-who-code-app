@@ -56,13 +56,11 @@ function Jobs() {
           <div className="row">
             <div className="col-md-12 lead-in">
               <h1 className="story-title">JOB SEARCH</h1>
-              <p>
                 <i>
                   <p className="pt-0">
                     #VetsWhoCode provides job placement assistance to veterans and spouses.
                   </p>
                 </i>
-              </p>
             </div>
             <div className="row">
               <div className="col-md-12">
