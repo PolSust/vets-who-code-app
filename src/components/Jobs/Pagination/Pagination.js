@@ -7,7 +7,7 @@ function Pagination({ pageContext, formData, formSubmitEvent, setPageContext }) 
 
   const pageChange = value => {
     if (value !== currentPage) {
-      setPageContext(null)
+      setPageContext(false)
       formData(formSubmitEvent, value)
     }
   }
@@ -108,9 +108,15 @@ Pagination.propTypes = {
   isFirstPage: PropTypes.bool,
   isLastPage: PropTypes.bool,
   totalPages: PropTypes.number,
-  pageContext: PropTypes.object,
-  setPageContext: PropTypes.object,
-  jobData: PropTypes.object,
+  pageContext: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.bool
+  ]),
+  setPageContext: PropTypes.func,
+  jobData: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.bool
+  ]),
   formData: PropTypes.func,
   formSubmitEvent: PropTypes.object,
 }
