@@ -108,15 +108,9 @@ Pagination.propTypes = {
   isFirstPage: PropTypes.bool,
   isLastPage: PropTypes.bool,
   totalPages: PropTypes.number,
-  pageContext: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.bool
-  ]),
+  pageContext: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   setPageContext: PropTypes.func,
-  jobData: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.bool
-  ]),
+  jobData: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   formData: PropTypes.func,
   formSubmitEvent: PropTypes.object,
 }
