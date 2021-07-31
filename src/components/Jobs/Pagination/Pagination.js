@@ -42,7 +42,14 @@ function Paginate({ pageContext, formData, formSubmitEvent, setPageContext }) {
             {minPage > 9 && (
               <li>
                 {/* <span aria-hidden="true">&laquo;</span> */}
-                <span aria-hidden="true" onKeyPress={direction} onClick={direction} style={{ cursor: 'pointer' }} tabindex="0" role="button">
+                <span
+                  aria-hidden="true"
+                  onKeyPress={direction}
+                  onClick={direction}
+                  style={{ cursor: 'pointer' }}
+                  tabIndex="0"
+                  role="button"
+                >
                   Previous
                 </span>
               </li>
@@ -53,7 +60,7 @@ function Paginate({ pageContext, formData, formSubmitEvent, setPageContext }) {
                 style={index + 1 + minPage > totalPages ? { display: 'none' } : {}}
               >
                 <span
-                  tabindex="0"
+                  tabIndex="0"
                   onClick={() => pageChange(index + 1 + minPage)}
                   onKeyPress={() => pageChange(index + 1 + minPage)}
                   style={
@@ -61,17 +68,23 @@ function Paginate({ pageContext, formData, formSubmitEvent, setPageContext }) {
                       ? { background: '#eee' }
                       : { cursor: 'pointer' }
                   }
-                  tabindex="0"
                   role="dialog"
                 >
                   {index + 1 + minPage}
                 </span>
               </li>
             ))}
-            {maxPage <= pageContext.totalPages && pageContext.totalPages > 9  && (
+            {maxPage <= pageContext.totalPages && pageContext.totalPages > 9 && (
               <li>
                 {/* <span aria-hidden="true">&raquo;</span> */}
-                <span aria-hidden="true" onClick={direction} style={{ cursor: 'pointer' }} tabindex="0" role="button" onKeyPress={direction}>
+                <span
+                  aria-hidden="true"
+                  onClick={direction}
+                  style={{ cursor: 'pointer' }}
+                  tabIndex="0"
+                  role="button"
+                  onKeyPress={direction}
+                >
                   More
                 </span>
               </li>
