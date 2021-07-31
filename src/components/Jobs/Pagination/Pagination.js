@@ -29,19 +29,11 @@ function Pagination({ pageContext, formData, formSubmitEvent, setPageContext }) 
 
   return (
     <>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-around',
-          alignItems: 'center',
-          margin: '0 auto',
-        }}
-      >
+      <div className="pagination-container">
         <nav aria-label="Page navigation">
           <ul className="pagination">
             {minPage > 9 && (
               <li>
-                {/* <span aria-hidden="true">&laquo;</span> */}
                 <span
                   aria-hidden="true"
                   onKeyPress={direction}
@@ -76,7 +68,6 @@ function Pagination({ pageContext, formData, formSubmitEvent, setPageContext }) 
             ))}
             {maxPage <= pageContext.totalPages && pageContext.totalPages > 9 && (
               <li>
-                {/* <span aria-hidden="true">&raquo;</span> */}
                 <span
                   aria-hidden="true"
                   onClick={direction}

@@ -1,3 +1,10 @@
+.pagination-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+}
+
 .adzuna {
   text-align: center;
   color: var(--element-3);
