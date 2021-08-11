@@ -5,6 +5,7 @@ import Loader from '../components/Jobs/Loader/Loader'
 import Video from '../components/Jobs/Video/Video'
 import Pagination from '../components/Pagination/Pagination'
 import PageHeader from '../components/PageHeader'
+import { StaticImage } from 'gatsby-plugin-image'
 import SEO from '../components/SEO'
 
 function Jobs() {
@@ -134,6 +135,22 @@ function Jobs() {
               type={'api'}
             />
           )}
+        </div>
+        <div 	style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', margin: '0 auto',
+        }}>
+          <div className="adzuna">
+              Powered By{' '}
+              <a href="https://www.adzuna.com/" target="_blank" rel="noopener noreferrer">
+                Adzuna{' '}
+            </a>
+            <StaticImage
+              width={12}
+              height={12}
+              className="adzuna-logo"
+              src="../images/adzuna.png"
+              alt="Adzuna Logo"
+            />
+          </div>
         </div>
       </div>
       {/* End Pagination */}
