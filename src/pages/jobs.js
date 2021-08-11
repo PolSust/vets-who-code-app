@@ -34,10 +34,7 @@ function Jobs() {
         setPageContext({
           currentPage: page,
           minPage: Math.floor(page / 10) * 10,
-          maxPage:
-            Math.ceil(page / 10) * 10 > Math.floor(data.count / 15)
-              ? Math.floor(data.count / 15)
-              : Math.ceil(page / 10) * 10 - 1,
+          maxPage: Math.ceil(page / 10) * 10 - 1,
           totalPages: Math.floor(data.count / 15),
           formResponse: formResponse,
           formData: formData,
@@ -45,6 +42,7 @@ function Jobs() {
 
 
         })
+        console.log(pageContext)
       })
       .then(setJobData(false))
       .catch(console.error)

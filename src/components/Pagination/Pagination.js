@@ -71,6 +71,12 @@ function Pagination({ pageContext, type }) {
   if (type == 'api'){
     return (
       <>
+      <div style={{
+          display: 'flex',
+          justifyContent: 'space-around',
+          alignItems: 'center',
+          margin: '0 auto',
+        }}>
         <div className="pagination-container">
           <nav aria-label="Page navigation">
             <ul className="pagination">
@@ -125,6 +131,7 @@ function Pagination({ pageContext, type }) {
             </ul>
           </nav>
         </div>
+      </div>
       </>
     )
 
