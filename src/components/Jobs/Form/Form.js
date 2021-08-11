@@ -7,10 +7,11 @@ function Form({ formData }) {
   return (
     <form
       onSubmit={handleSubmit(submit => formData(submit, 1))}
-      className="form-inline text-center"
+      className="form-inline text-center job-form"
+      id="jobForm"
     >
       <div className="zipcode-container">
-        <label className="sr-only" htmlFor="zipCode">
+        <label className="sr-only job-label" htmlFor="zipCode">
           Zip Code
         </label>
         <input
@@ -32,13 +33,17 @@ function Form({ formData }) {
           name="remote"
           ref={register}
         />
-        <label className="form-check-label" htmlFor="inlineFormCheck" style={{ marginLeft: 5 }}>
+        <label
+          className="form-check-label job-label"
+          htmlFor="inlineFormCheck"
+          style={{ marginLeft: 5 }}
+        >
           Remote Only
         </label>
       </div>
 
       <div className="form-group distance-container">
-        <label htmlFor="distanceSelect"></label>
+        <label htmlFor="distanceSelect job-label"></label>
         <select
           className="form-control input-md"
           id="distanceSelect"
