@@ -3,7 +3,7 @@ import Form from '../components/Jobs/Form/Form'
 import Card from '../components/Jobs/Card/Card'
 import Loader from '../components/Jobs/Loader/Loader'
 import Video from '../components/Jobs/Video/Video'
-import Pagination from '../components/Jobs/Pagination/Pagination'
+import Pagination from '../components/Pagination/Pagination'
 import PageHeader from '../components/PageHeader'
 import SEO from '../components/SEO'
 
@@ -39,6 +39,11 @@ function Jobs() {
               ? Math.floor(data.count / 15)
               : Math.ceil(page / 10) * 10 - 1,
           totalPages: Math.floor(data.count / 15),
+          formResponse: formResponse,
+          formData: formData,
+          setPageContext: setPageContext,
+
+
         })
       })
       .then(setJobData(false))
@@ -127,11 +132,8 @@ function Jobs() {
         <div className="row">
           {pageContext && (
             <Pagination
-              jobData={jobData}
-              formData={formData}
-              formSubmitEvent={formSubmitEvent}
               pageContext={pageContext}
-              setPageContext={setPageContext}
+              type={'api'}
             />
           )}
         </div>

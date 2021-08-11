@@ -121,7 +121,7 @@ const Blog = ({ pageContext }) => {
         </div>
       </section>
       <nav aria-label="Page navigation">
-        <Pagination pageContext={pageContext} />
+        <Pagination pageContext={pageContext} type={'route'} />
       </nav>
     </>
   )

@@ -1,31 +1,15 @@
-import { StaticImage } from 'gatsby-plugin-image'
 import PropTypes from 'prop-types'
 import './pagination.css'
 
-function Pagination({ pageContext, formData, formSubmitEvent, setPageContext }) {
+function Pagination({ pageContext, setPageNumber }) {
   let { currentPage, totalPages, maxPage, minPage } = pageContext
 
   const pageChange = value => {
-    if (value !== currentPage) {
-      setPageContext(false)
-      formData(formSubmitEvent, value)
-    }
+    if (value !== currentPage) setPageNumber(value)
   }
 
   const direction = value => {
     let count = value.target.innerText === 'More' ? 10 : -10
-
-    setPageContext({
-      currentPage: currentPage,
-      minPage: minPage + count,
-      maxPage:
-        count === 'More'
-          ? maxPage + 10 > totalPages
-            ? totalPages
-            : maxPage + 10
-          : maxPage + count,
-      totalPages: totalPages,
-    })
   }
 
   return (
@@ -84,19 +68,6 @@ function Pagination({ pageContext, formData, formSubmitEvent, setPageContext }) 
           </ul>
         </nav>
       </div>
-      <div className="adzuna">
-        Powered By{' '}
-        <a href="https://www.adzuna.com/" target="_blank" rel="noopener noreferrer">
-          Adzuna{' '}
-        </a>
-        <StaticImage
-          width={12}
-          height={12}
-          className="adzuna-logo"
-          src="../../../images/adzuna.png"
-          alt="Adzuna Logo"
-        />
-      </div>
     </>
   )
 }
@@ -112,5 +83,4 @@ Pagination.propTypes = {
   setPageContext: PropTypes.func,
   jobData: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   formData: PropTypes.func,
-  formSubmitEvent: PropTypes.object,
 }
