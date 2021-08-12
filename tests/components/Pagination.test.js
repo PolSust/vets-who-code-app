@@ -1,7 +1,5 @@
 import Pagination from '../../src/components/Pagination'
 import { render } from '@testing-library/react'
-import React from 'react';
-import ReactDOM from 'react-dom';
 
 describe('<Pagination />', () => {
     let pageContext = {
