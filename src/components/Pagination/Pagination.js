@@ -5,7 +5,7 @@ function Pagination({ pageContext, type }) {
   let { currentPage, totalPages, minPage, maxPage, path } = pageContext
 
   const apiPageChange = value => {
-    if (value !== currentPage) pageContext.formData(pageContext.formResponse, value);      
+    if (value !== currentPage) pageContext.formData(pageContext.formResponse, value);
   }
 
   const direction = value => {
@@ -62,7 +62,7 @@ function Pagination({ pageContext, type }) {
                 )}
               </ul>
             </nav>
-            
+
           </div>
         </>
       )

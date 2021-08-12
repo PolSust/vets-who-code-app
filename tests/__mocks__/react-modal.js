@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { Component } from 'react'
 
 class Modal extends Component {
   static setAppElement(element) {}

@@ -1,16 +1,20 @@
-import Countdown from '../../src/components/Countdown'
 import { render, act } from '@testing-library/react'
+import Countdown from '../../src/components/Countdown'
 
 describe('<Countdown />', () => {
-  jest.useFakeTimers()
+  afterAll(() => {
+    jest.clearAllTimers()
+  })
+
   test('should unmount and clear interval to prevent memory leaks', () => {
+    jest.useFakeTimers()
     const { unmount } = render(<Countdown nextClass="March 21, 5050" />)
 
     jest.spyOn(console, 'error').mockImplementation(() => {})
     act(() => jest.runOnlyPendingTimers())
     unmount()
     expect(console.error).not.toHaveBeenCalled()
-    expect(clearInterval.mock.calls.length).toEqual(2)
+    expect(clearInterval.clock.timers['3'].id).toEqual(3)
   })
 
   test('should render countdown when class is a future date', () => {
