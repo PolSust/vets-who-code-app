@@ -26,7 +26,6 @@ function Pagination({ pageContext, type }) {
     })
   }
 
-  console.log(pageContext)
   if (type == 'route'){
       return (
         <>
