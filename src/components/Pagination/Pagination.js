@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 function Pagination({ pageContext, type }) {
-  let { currentPage, totalPages, minPage, maxPage} = pageContext
+  let { currentPage, totalPages, minPage, maxPage, path } = pageContext
 
   const apiPageChange = value => {
     if (value !== currentPage) pageContext.formData(pageContext.formResponse, value);      
@@ -42,7 +42,7 @@ function Pagination({ pageContext, type }) {
               <ul className="pagination">
                 {currentPage > 1 && (
                   <li>
-                    <Link to={`/blog/${currentPage == 2 ? '' : currentPage - 1}`} rel="prev">
+                    <Link to={`/${path}/${currentPage == 2 ? '' : currentPage - 1}`} rel="prev">
                       {/* <span aria-hidden="true">&laquo;</span> */}
                       <span aria-hidden="true">Previous</span>
                     </Link>
@@ -50,12 +50,12 @@ function Pagination({ pageContext, type }) {
                 )}
                 {Array.from({ length: totalPages }, (_, index) => (
                   <li key={index}>
-                    <Link to={`/blog/${index == 0 ? '' : index + 1}`}>{index + 1}</Link>
+                    <Link to={`/${path}/${index == 0 ? '' : index + 1}`}>{index + 1}</Link>
                   </li>
                 ))}
                 {currentPage < totalPages && (
                   <li>
-                    <Link to={`/blog/${currentPage + 1}`} rel="next">
+                    <Link to={`/${path}/${currentPage + 1}`} rel="next">
                       {/* <span aria-hidden="true">&raquo;</span> */}
                       <span aria-hidden="true">Next</span>
                     </Link>
@@ -150,5 +150,6 @@ Pagination.propTypes = {
     totalPages: PropTypes.number,
     contentfulData: PropTypes.object,
     type: PropTypes.string,
+    path: PropTypes.string,
   }),
 }
