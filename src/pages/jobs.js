@@ -40,8 +40,6 @@ function Jobs() {
           formResponse: formResponse,
           formData: formData,
           setPageContext: setPageContext,
-
-
         })
         console.log(pageContext)
       })
@@ -129,19 +127,20 @@ function Jobs() {
       {/* Pagination */}
       <div className="container">
         <div className="row">
-          {pageContext && (
-            <Pagination
-              pageContext={pageContext}
-              type={'api'}
-            />
-          )}
+          {pageContext && <Pagination pageContext={pageContext} type={'api'} />}
         </div>
-        <div 	style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', margin: '0 auto',
-        }}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-around',
+            alignItems: 'center',
+            margin: '0 auto',
+          }}
+        >
           <div className="adzuna">
-              Powered By{' '}
-              <a href="https://www.adzuna.com/" target="_blank" rel="noopener noreferrer">
-                Adzuna{' '}
+            Powered By{' '}
+            <a href="https://www.adzuna.com/" target="_blank" rel="noopener noreferrer">
+              Adzuna{' '}
             </a>
             <StaticImage
               width={12}

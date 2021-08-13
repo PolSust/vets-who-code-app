@@ -15,8 +15,5 @@ export default Loader
 
 Loader.propTypes = {
   isSubmitted: PropTypes.bool,
-  jobData: PropTypes.oneOfType([ 
-      PropTypes.bool,
-      PropTypes.object
-  ])
+  jobData: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
 }

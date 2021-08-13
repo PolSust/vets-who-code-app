@@ -38,3 +38,15 @@
     transform: translateY(0);
   }
 }
+
+.adzuna {
+  text-align: center;
+  color: var(--element-3);
+  padding-bottom: 40px;
+}
+
+.adzuna a:hover {
+  color: var(--primary-1);
+  text-decoration: underline;
+  transition: all 0.3s;
+}

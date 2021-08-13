@@ -12,7 +12,6 @@ describe('<Form />', () => {
       )
     }
 
-
     const { container } = render(<Form formData={formData} />)
     const jobSearchForm = container.querySelector('#jobForm')
     const zipCodeInput = container.querySelector('#zipCode')
@@ -33,7 +32,7 @@ describe('<Form />', () => {
     })
 
     expect(zipCodeInput.value).toBe('02901')
-    // expect(checkbox.checked).toEqual(true) // where did checkbox come from?
+    expect(remoteCheckbox.checked).toEqual(true)
     expect(distanceSelectOptions[0].selected).toBe(true)
     expect(distanceSelectOptions[1].selected).toBe(false)
 
