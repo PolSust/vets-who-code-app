@@ -7,12 +7,27 @@ describe('<Pagination />', () => {
     totalPages: 2,
     minPage: 1,
     maxPage: 100,
-    path: 'path',
+    path: 'blog',
   }
 
-  test('should render correctly', () => {
+  test('should render route correctly', () => {
     const { container } = render(<Pagination pageContext={pageContext} type={'route'} />)
-    const navTags = container.querySelectorAll('nav')
-    expect(navTags.length).toBe(1)
+    const navTags = container.querySelectorAll('nav');
+    const anchorTags = container.querySelectorAll('a');
+    const lineTags = container.querySelectorAll('li');
+    expect(anchorTags.length).toBe(3);
+    expect(navTags.length).toBe(1);
+    expect(lineTags.length).toBe(3);
   })
+
+
+  test('should render api correctly', () => {
+    const { container } = render(<Pagination pageContext={pageContext} type={'api'} />)
+    const navTags = container.querySelectorAll('nav');
+    const spanTags = container.querySelectorAll('span');
+    expect(spanTags.length).toBe(99);
+    expect(navTags.length).toBe(1);
+  })
+
 })
+
