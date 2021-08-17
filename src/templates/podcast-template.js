@@ -97,7 +97,7 @@ PodcastLink.propTypes = {
 }
 
 const Podcast = ({ pageContext }) => {
-  pageContext.path = 'podcast';
+  pageContext.path = 'podcast'
   const { currentPage, isFirstPage, isLastPage, totalPages, contentfulData } = pageContext
   const nextPage = `/podcast/${String(currentPage + 1)}`
   const prevPage = currentPage - 1 === 1 ? '/podcast' : `/podcast/${String(currentPage - 1)}`

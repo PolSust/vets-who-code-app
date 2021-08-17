@@ -97,7 +97,7 @@ BlogPostLink.propTypes = {
 }
 
 const Blog = ({ pageContext }) => {
-  pageContext.path = 'blog';
+  pageContext.path = 'blog'
   return (
     <>
       <SEO title="Blog" />
