@@ -4,7 +4,7 @@ import { render } from '@testing-library/react'
 describe('<Loader />', () => {
   test('should render correctly', () => {
     const { container } = render(<Loader />)
-    let vid = container.querySelectorAll('div');
-    expect(vid.length).toBe(4)
+    let div = container.querySelectorAll('div');
+    expect(div.length).toBe(4)
   })
 })
