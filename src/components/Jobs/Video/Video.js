@@ -18,7 +18,7 @@ function Video({ isSubmitted }) {
     }
 
     return () => (current = false)
-  })
+  }, [])
 
   return (
     <video

@@ -1,6 +1,3 @@
 import { Component } from 'react'
 
-export default function file(){
-    return (<div />)
-  
-}
+export default 'test-file-stub'
