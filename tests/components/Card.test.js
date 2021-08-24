@@ -22,7 +22,6 @@ describe('<Card />', () => {
     expect(gridItem.length).toBe(5);
     expect(btn.length).toBe(1);
     expect(gridContainer.length).toBe(1);
-    console.log(container.innerHTML);
   })
 
 });
