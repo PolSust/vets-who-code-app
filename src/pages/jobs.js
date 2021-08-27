@@ -22,7 +22,7 @@ function Jobs() {
     let what = 'javascript react gatsby graphql node jquery bootstrap'
     let exclude = '0000 senior sr principal lead master'
 
-    let url = `https://test-vwc-job-app.netlify.app/.netlify/functions/jobs/${page}?&results_per_page=15&what_or=${what}&where=${
+    let url = `https://8oi4im0qo3.execute-api.us-east-1.amazonaws.com/dev/jobsearch/${page}?&results_per_page=15&what_or=${what}&where=${
       formResponse.zipCode
     }&distance=${formResponse.distance}&what_exclude=${exclude}&sort_by=date&max_days_old=30${
       formResponse.remote === true ? '&what_and=remote' : ''
