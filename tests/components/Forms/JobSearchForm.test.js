@@ -3,25 +3,28 @@ import { render, screen, fireEvent, waitFor, act} from '@testing-library/react'
 import Form from '../../../src/components/Jobs/Form/Form'
 
 
-const mockLogin = jest.fn((submit, page) => {
+window.fetch = jest.fn().mockImplementation((submit, page) => {
   return Promise.resolve({ submit, page });
 });
 
 describe("Form", () => {
-  const { container } = render(<Form formData={mockLogin}/>)
+  test("should set fields and submit form", async () => {
+   const { container } = render(<Form formData={window.fetch}/>)
+   const jobForm = container.querySelector('form')
    const zipCodeInput = container.querySelector('#zipCode')
    const remoteCheckbox = container.querySelector('#inlineFormCheck')
    const distanceSelect = container.querySelector('#distanceSelect')
   
    fireEvent.input(zipCodeInput, {target: { value: '02901' },})
-   fireEvent.input(remoteCheckbox, {target: { value: false },})
-   fireEvent.input(distanceSelect, {target: { value: 40 },})
+   fireEvent.input(remoteCheckbox, {target: { value: 'false' },})
+   fireEvent.input(distanceSelect, {target: { value: '40' },})
 
-  it("should display required error when value is invalid", async () => {
+   expect(zipCodeInput.value).toBe('02901');
+   expect(remoteCheckbox.value).toBe("false");
+   expect(distanceSelect.value).toBe('40');
 
-    fireEvent.submit(screen.getByRole("button"));
-
-    await waitFor(() =>  expect(mockLogin).toHaveBeenCalled());
+  await waitFor(() =>  fireEvent.submit(jobForm));
+   expect(window.fetch).toHaveBeenCalled();
   });
 });
 
